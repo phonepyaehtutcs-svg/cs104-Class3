@@ -1,0 +1,17 @@
+import random
+
+player1 = input("Choose rock, paper, or scissors: ").strip().lower()
+computer = random.choice(["rock", "paper", "scissors"])
+
+if player1 not in ["rock", "paper", "scissors"]:
+    print("Please enter rock, paper, or scissors.")
+elif player1 == computer:
+    print("It's a tie! Both chose", player1)
+elif (
+    (player1 == "rock" and computer == "scissors")
+    or (player1 == "paper" and computer == "rock")
+    or (player1 == "scissors" and computer == "paper")
+):
+    print("You win! The computer chose", computer)
+else:
+    print("You lose! The computer chose", computer)

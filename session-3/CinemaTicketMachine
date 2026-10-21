@@ -1,0 +1,20 @@
+age = int(input("Enter your age: "))
+seat = input("Enter your seat type (normal, premium): ")
+student_card = input("Do you have a student card? (yes/no): ")
+
+seat_prices = {
+    "normal": 220,
+    "premium": 350,
+}
+
+if age < 0 or age > 100:
+    print("Invalid age.")
+elif seat not in seat_prices:
+    print("Invalid seat type.")
+elif student_card not in ("yes", "no"):
+    print("Invalid student card response.")
+else:
+    price = seat_prices[seat]
+    if student_card == "yes":
+        price *= 0.8
+    print(f"Ticket price: {price:.2f} baht")
